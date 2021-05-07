@@ -57,13 +57,13 @@
             alt="Poster of the movie"
             class="movie-poster-image"
           />
-          <img
-            v-else
-            :src="this.$data.defaultPosterUrl"
-            alt="Default placeholder poster"
-            class="no-movie-poster-image"
-          />
         </transition>
+        <img
+          v-if="!selectedMovieData.posterUrl"
+          :src="this.$data.defaultPosterUrl"
+          alt="Default placeholder poster"
+          class="no-movie-poster-image"
+        />
       </div>
     </transition>
   </div>
@@ -136,6 +136,7 @@ li {
   margin-top: 40px;
   width: 100px;
   padding: 0;
+  filter: invert(100%);
 }
 
 @media (max-height: 1000px) {
